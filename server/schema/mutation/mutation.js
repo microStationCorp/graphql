@@ -1,5 +1,12 @@
-const { GraphQLObjectType, GraphQLID, GraphQLString,GraphQLInt } = require("graphql");
+const {
+  GraphQLObjectType,
+  GraphQLID,
+  GraphQLString,
+  GraphQLInt,
+} = require("graphql");
 const { AuthorType, BookType } = require("../types/rootTypes");
+const AuthorModel = require("../../model/authorModel");
+const BookModel = require("../../model/bookModel");
 
 const Mutation = new GraphQLObjectType({
   name: "Mutation",

@@ -1,5 +1,7 @@
 const { GraphQLObjectType, GraphQLID, GraphQLList } = require("graphql");
 const { AuthorType, BookType } = require("../types/rootTypes");
+const AuthorModel = require("../../model/authorModel");
+const BookModel = require("../../model/bookModel");
 
 const RootQueryType = new GraphQLObjectType({
   name: "QueryType",
