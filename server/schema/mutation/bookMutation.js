@@ -1,4 +1,4 @@
-const { GraphQLID, GraphQLString } = require("graphql");
+const { GraphQLID, GraphQLString, GraphQLNonNull } = require("graphql");
 const { BookType } = require("../types/rootTypes");
 const BookModel = require("../../model/bookModel");
 
@@ -6,13 +6,13 @@ const addBookMutation = {
   type: BookType,
   args: {
     name: {
-      type: GraphQLString,
+      type: new GraphQLNonNull(GraphQLString),
     },
     genre: {
-      type: GraphQLString,
+      type: new GraphQLNonNull(GraphQLString),
     },
     authorId: {
-      type: GraphQLID,
+      type: new GraphQLNonNull(GraphQLID),
     },
   },
   resolve(parent, { name, genre, authorId }) {

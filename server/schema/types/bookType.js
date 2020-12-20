@@ -17,7 +17,6 @@ const BookType = (types) =>
       author: {
         type: types.AuthorType,
         resolve(parent, args) {
-          console.log(types.AuthorType);
           return AuthorModel.findById(parent.authorId);
         },
       },

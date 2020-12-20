@@ -1,4 +1,4 @@
-const { GraphQLString, GraphQLInt } = require("graphql");
+const { GraphQLString, GraphQLInt, GraphQLNonNull } = require("graphql");
 const { AuthorType } = require("../types/rootTypes");
 const AuthorModel = require("../../model/authorModel");
 
@@ -6,10 +6,10 @@ const addAuthorMutation = {
   type: AuthorType,
   args: {
     name: {
-      type: GraphQLString,
+      type: new GraphQLNonNull(GraphQLString),
     },
     age: {
-      type: GraphQLInt,
+      type: new GraphQLNonNull(GraphQLInt),
     },
   },
   resolve(parent, { name, age }) {

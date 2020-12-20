@@ -17,7 +17,6 @@ const AuthorType = (types) =>
       book: {
         type: new GraphQLList(types.BookType),
         resolve(parent, args) {
-          console.log(types.BookType);
           return BookModel.find({ authorId: parent.id });
         },
       },
