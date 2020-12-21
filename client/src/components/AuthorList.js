@@ -1,17 +1,17 @@
 import { useQuery } from "@apollo/client";
-import { GET_ALL_BOOKS } from "../query/bookQuery";
+import { GET_ALL_AUTHORS } from "../query/authorQuery";
 
-const BookList = () => {
-  const { loading, error, data } = useQuery(GET_ALL_BOOKS);
+const AuthorList = () => {
+  const { loading, error, data } = useQuery(GET_ALL_AUTHORS);
 
   if (loading) return <p>loading....</p>;
   if (error) return <p>error</p>;
   return (
     <div>
       <ul>
-        {data.books.map((b) => (
+        {data.authors.map((b) => (
           <li key={b.id}>
-            {b.name} : {b.genre}
+            {b.name} : {b.age}
           </li>
         ))}
       </ul>
@@ -19,4 +19,4 @@ const BookList = () => {
   );
 };
 
-export default BookList;
+export default AuthorList;
