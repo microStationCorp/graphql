@@ -10,6 +10,7 @@ const AddAuthor = () => {
 
   const submitAuthorFormHandler = (e) => {
     e.preventDefault();
+    console.log({ name, age });
     if (name !== "" && age !== 0 && age !== "") {
       addAuthor({
         variables: { name, age },

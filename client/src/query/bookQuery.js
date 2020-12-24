@@ -6,6 +6,9 @@ export const GET_ALL_BOOKS = gql`
       name
       genre
       id
+      author {
+        name
+      }
     }
   }
 `;
